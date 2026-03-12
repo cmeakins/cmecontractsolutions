@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CME Contract Solutions Group | Cloud Infrastructure & DevOps Support</title>
+    <meta name="description" content="CME Contract Solutions Group delivers cloud and on-premises infrastructure support, platform reliability engineering, and DevOps automation for mission-critical systems.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="CME Contract Solutions Group">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="capabilities.html">Capabilities</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-badge">Small Business &bull; SAM Registered &bull; CAGE: 9H8M2</div>
+            <h1>Cloud Infrastructure &mdash; Platform Reliability &mdash; DevOps Support</h1>
+            <p>Cloud and on-premises infrastructure support, platform reliability engineering, and DevOps automation for mission-critical systems.</p>
+            <div class="hero-buttons">
+                <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+                <a href="docs/CME-Capability-Statement.pdf" class="btn btn-outline" download>Download Capability Statement</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about">
+        <div class="section-inner">
+            <div class="about-grid">
+                <div>
+                    <span class="section-label">About Us</span>
+                    <h2 class="section-title">Battle-Tested Production Support</h2>
+                    <p class="about-text">CME Contract Solutions Group delivers cloud and on-premises infrastructure support, platform reliability engineering, and DevOps automation for mission-critical systems. With 12+ years of experience in regulated, high-availability financial services environments, we bring proven incident management, operational automation, and cross-team coordination to keep platforms stable, scalable, and resilient.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-number">12+</div>
+                            <div class="stat-label">Years of Experience</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">25%</div>
+                            <div class="stat-label">Incident Reduction</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Engineers Mentored</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Production Coverage</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-highlight">
+                    <h3>Proven at Scale</h3>
+                    <p>Our founder spent 12 years as a production platform support engineer at JPMorgan Chase, supporting global payment applications across multiple regions. That experience in one of the world's most demanding, regulated technology environments is the foundation of everything we deliver.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="CME Contract Solutions Group">
+            </div>
+            <p class="footer-text">&copy; 2025 Eakins Holding Services LLC, DBA CME Contract Solutions Group. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="capabilities.html">Capabilities</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.stat').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>
